@@ -3,10 +3,10 @@ import NfcImage from "../assets/nfcimage.png"
 import { useState } from "react"
 import { authHeader } from "../utils/authHeader"
 import axios from "axios"
-import Sidebar from "../Components/SideBar"
 import MainContent from "../Components/MainContent"
 import NavBar from "../Components/NavBar"
 import SectionHeader from "../Components/SectionHeader"
+import Sidebar from "../Components/Sidebar"
 
 const RegisterInstituition = () =>{
 
