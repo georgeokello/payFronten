@@ -12,6 +12,8 @@ import PlatformAdmin from "../pages/platFormAdmin";
 import CreatePlatformAdmin from "../pages/CreatePlaformAdmin";
 import Customer from "../pages/Customers";
 import CreateCustomer from "../pages/CreateCustomers";
+import AgentAdmin from "../pages/agentAdmin";
+import CreateAgentAdmin from "../pages/CreateAgentAdmin";
 
 
 const AppRoutes = () => {
@@ -30,6 +32,8 @@ const AppRoutes = () => {
             <Route path="/create-platform-admin" element={<CreatePlatformAdmin /> } />
             <Route path="/customer" element={<Customer />} />
             <Route path="/create-customer" element ={ <CreateCustomer /> } />
+            <Route path="/agent-admin" element={<AgentAdmin />} />
+            <Route path="/create-agent-admin" element={<CreateAgentAdmin /> } />
         </Routes>
     )
 
