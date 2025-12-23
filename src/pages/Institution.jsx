@@ -32,23 +32,10 @@ const Institution = () => {
     const [total, setTotal] = useState(0);
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState("")
-
-    // {
-    // "name": "string",
-    // "type": "school",
-    // "email": "user@example.com",
-    // "phone": "string",
-    // "location": "string",
-    // "contact_person": "string",
-    // "contact_phone": "string",
-    // "status": "pending",
-    // "is_active": true
-    // }
-
+    // delete items
     const [deleteItem, setDeleteItem] = useState(null); // null = closed
     const [deleting, setDeleting] = useState(false);
-
-
+    // edit items
     const [editingItem, setEditingItem] = useState(null); // null = no modal
     const [formData, setFormData] = useState({
         name: "",
@@ -63,6 +50,7 @@ const Institution = () => {
         is_active: false,
     });
 
+    // fetch data
     useEffect(() => {
         axios
             .get("https://edutele-pay-backend.onrender.com/api/institutions", {
