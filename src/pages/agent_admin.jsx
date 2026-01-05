@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import MainContent from "../Components/MainContent"
 import NavBar from "../Components/NavBar"
 import SectionHeader from "../Components/SectionHeader"
-import Sidebar from "../Components/Sidebar"
+import Sidebar from "../Components/SideBar"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { authHeader } from "../utils/authHeader"
@@ -52,7 +52,7 @@ const AgentAdmin = () => {
     // fetch data
     useEffect(() => {
         axios
-            .get("https://edutele-pay-backend.onrender.com/api/admin/users", {
+            .get("https://edutele-pay-backend.onrender.com/api/users", {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: authHeader()

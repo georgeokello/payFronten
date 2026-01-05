@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import MainContent from "../Components/MainContent"
 import NavBar from "../Components/NavBar"
 import SectionHeader from "../Components/SectionHeader"
-import Sidebar from "../Components/Sidebar"
+import Sidebar from "../Components/SideBar"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { authHeader } from "../utils/authHeader"
@@ -20,7 +20,7 @@ const Vendor = () =>{
     // fetch data
     useEffect(() => {
         axios
-            .get("https://edutele-pay-backend.onrender.com/api/institution-admin/vendors", {
+            .get("https://edutele-pay-backend.onrender.com/api/vendors", {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: authHeader()
@@ -39,8 +39,8 @@ const Vendor = () =>{
 
     console.log("items", items)
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>{error}</p>;
+    // if (loading) return <p>Loading...</p>;
+    // if (error) return <p>{error}</p>;
 
     // {
     //   "public_id": "string",
@@ -62,7 +62,7 @@ const Vendor = () =>{
                 <NavBar />
                 <SectionHeader title="View All Vendors" />
                 <div className="ml-20">
-                    <h2>Available Vendors <span className="ml-20 text-blue-700"> <Link to="/create-vendor">Create Vendor</Link> </span> </h2>
+                    <h2>Available Vendors <span className="ml-20 text-blue-700"> <Link to="/create-vendor">Add a Vendor</Link> </span> </h2>
                 </div>
                 <div className="p-10 w-full">
                     <table className=" bg-white mt-6 w-full">

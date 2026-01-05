@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaBars, FaCog, FaHome, FaSignOutAlt, FaUserAlt, FaBaby, FaUser, FaAccessibleIcon, FaAccusoft, FaAddressBook } from 'react-icons/fa'
+import { FaBars, FaCog, FaHome, FaSignOutAlt, FaUserAlt, FaBaby, FaUser, FaAccessibleIcon, FaAccusoft, FaAddressBook, FaBuilding, FaEnvelope } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../context/authContext';
@@ -37,10 +37,10 @@ const Sidebar = () => {
                             </li>
                         </Link>
                        
-                        <Link to="/institution">
+                        <Link to="/business">
                             <li className="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                                <FaAccessibleIcon size={24} />
-                                <span className={`ml-4 md:block ${isOpen ? "block" : "hidden"}`}>Institutions</span>
+                                <FaBuilding size={24} />
+                                <span className={`ml-4 md:block ${isOpen ? "block" : "hidden"}`}>Businesses</span>
                             </li>
                         </Link>
 
@@ -53,21 +53,14 @@ const Sidebar = () => {
 
                         <Link to="/customer">
                             <li className="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                                <FaCog size={24}/>
+                                <FaUserAlt size={24}/>
                                 <span className={`ml-4 md:block ${isOpen ? "block": "hidden"}`}>Customers</span>
-                            </li>
-                        </Link>
-
-                        <Link to="/platform-admin">
-                            <li className="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                                <FaCog size={24}/>
-                                <span className={`ml-4 md:block ${isOpen ? "block": "hidden"}`}>Institution Admin</span>
                             </li>
                         </Link>
 
                         <Link to="/agent-admin">
                             <li className="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                                <FaCog size={24}/>
+                                <FaUser size={24}/>
                                 <span className={`ml-4 md:block ${isOpen ? "block": "hidden"}`}>Agent Admin</span>
                             </li>
                         </Link>

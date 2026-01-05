@@ -6,11 +6,11 @@ import axios from "axios"
 import MainContent from "../Components/MainContent"
 import NavBar from "../Components/NavBar"
 import SectionHeader from "../Components/SectionHeader"
-import Sidebar from "../Components/Sidebar"
+import Sidebar from "../Components/SideBar"
 
 
 
-const RegisterInstituition = () => {
+const RegisterBusiness = () => {
 
 
     // /api/institutions/register
@@ -34,7 +34,7 @@ const RegisterInstituition = () => {
     const [ContactPhone, SetContactPhone] = useState("")
     
 
-    const registerInstitution = async (e) => {
+    const registerBusiness = async (e) => {
         e.preventDefault()
 
         const payload = {
@@ -49,7 +49,7 @@ const RegisterInstituition = () => {
         }
 
         try {
-            const resp = await axios.post("https://edutele-pay-backend.onrender.com/api/institutions", payload, {
+            const resp = await axios.post("https://edutele-pay-backend.onrender.com/api/businesses", payload, {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: authHeader()
@@ -73,7 +73,7 @@ const RegisterInstituition = () => {
                 <SectionHeader title="Create Institution" />
                 <div className="h-screen w-full">
                     <div className="flex flex-col items-center justify-center">
-                        <form className="bg-white p-6 rounded shadow-md w-2/4" onSubmit={registerInstitution}>
+                        <form className="bg-white p-6 rounded shadow-md w-2/4" onSubmit={registerBusiness}>
                             <div className="mb-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Username</label>
                                 <input type="text" onChange={(e) => setUsername(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter your username" />
@@ -102,7 +102,7 @@ const RegisterInstituition = () => {
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Contact Phone</label>
                                 <input type="text" onChange={(e) => SetContactPhone(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter your contact phone" />
                             </div>
-                            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Create Institution</button>
+                            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Business</button>
                         </form>
                     </div>
                 </div>
@@ -111,4 +111,4 @@ const RegisterInstituition = () => {
     )
 }
 
-export default RegisterInstituition
+export default RegisterBusiness

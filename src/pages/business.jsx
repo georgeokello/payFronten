@@ -2,14 +2,14 @@ import { Link } from "react-router-dom"
 import MainContent from "../Components/MainContent"
 import NavBar from "../Components/NavBar"
 import SectionHeader from "../Components/SectionHeader"
-import Sidebar from "../Components/Sidebar"
+import Sidebar from "../Components/SideBar"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { authHeader } from "../utils/authHeader"
 
 
 
-const Institution = () => {
+const Business = () => {
 
     //     {
     //   "public_id": "string",
@@ -53,7 +53,7 @@ const Institution = () => {
     // fetch data
     useEffect(() => {
         axios
-            .get("https://edutele-pay-backend.onrender.com/api/institutions", {
+            .get("https://edutele-pay-backend.onrender.com/api/businesses", {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: authHeader()
@@ -72,8 +72,8 @@ const Institution = () => {
 
     console.log("items", items)
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>{error}</p>;
+    // if (loading) return <p>Loading...</p>;
+    // if (error) return <p>{error}</p>;
 
     const handleEditClick = (item) => {
         setEditingItem(item);          // Open modal
@@ -95,7 +95,7 @@ const Institution = () => {
     const handleSave = async () => {
         try {
             await axios.put(
-                `https://edutele-pay-backend.onrender.com/api/institutions/${editingItem.public_id}`,
+                `https://edutele-pay-backend.onrender.com/api/businesses/${editingItem.public_id}`,
                 formData,
                 {
                     headers: {
@@ -127,7 +127,7 @@ const Institution = () => {
 
         try {
             await axios.delete(
-                `https://edutele-pay-backend.onrender.com/api/institutions/${deleteItem.public_id}`,
+                `https://edutele-pay-backend.onrender.com/api/businesses/${deleteItem.public_id}`,
                 {
                     headers: {
                         Authorization: authHeader(),
@@ -156,9 +156,9 @@ const Institution = () => {
             <Sidebar />
             <MainContent>
                 <NavBar />
-                <SectionHeader title="View All Institutions" />
+                <SectionHeader title="View All Businesses" />
                 <div className="ml-20">
-                    <h2>Avialable Institutions <span className="ml-20 text-blue-700"> <Link to="/signup-institution">Create Institution</Link></span></h2>
+                    <h2>Registered Businesses <span className="ml-20 text-blue-700"> <Link to="/signup-institution">Add a Business</Link></span></h2>
                 </div>
                 <div className="p-10 w-full">
                     <table className=" bg-white mt-6 w-full">
@@ -334,4 +334,4 @@ const Institution = () => {
     )
 }
 
-export default Institution
+export default Business

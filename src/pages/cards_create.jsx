@@ -1,7 +1,7 @@
 import MainContent from "../Components/MainContent";
 import NavBar from "../Components/NavBar";
 import SectionHeader from "../Components/SectionHeader";
-import Sidebar from "../Components/Sidebar";
+import Sidebar from "../Components/SideBar";
 
 
 
