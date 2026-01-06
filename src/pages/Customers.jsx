@@ -96,26 +96,27 @@ const Customer = () => {
                     <table className=" bg-white mt-6 w-full">
                         <thead>
                             <tr>
-                                <th className="py-2 px-4 border-b border-gray-200">Public ID</th>
                                 <th className="py-2 px-4 border-b border-gray-200">Name</th>
                                 <th className="py-2 px-4 border-b border-gray-200">Phone</th>
                                 <th className="py-2 px-4 border-b border-gray-200">Gender</th>
                                 <th className="py-2 px-4 border-b border-gray-200">D.O.B</th>
                                 <th className="py-2 px-4 border-b border-gray-200">Account Type</th>
                                 <th className="py-2 px-4 border-b border-gray-200">Status</th>
-                                <th className="py-2 px-4 border-b border-gray-200">Card</th>
                                 <th className="py-2 px-4 border-b border-gray-200">Edit</th>
                                 <th className="py-2 px-4 border-b border-gray-200">Delete</th>
+                                <th className="py-2 px-4 border-b border-gray-200">Card</th>
                                 
                             </tr>
                         </thead>
                         <tbody>
                             {items.map((item) => (
                                 <tr>
-                                <td className="py-2 px-4 border-b border-gray-200">**** **** **** 1234</td>
-                                <td className="py-2 px-4 border-b border-gray-200">John Doe</td>
-                                <td className="py-2 px-4 border-b border-gray-200">12/24</td>
-                                <td className="py-2 px-4 border-b border-gray-200">Active</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{item.full_name}</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{item.phone}</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{item.gender}</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{item.date_of_birth}</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{item.account_type}</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{item.status}</td>
                                 <td className="py-2 px-4 border-b border-gray-200 text-blue-600 cursor-pointer">Edit</td>
                                 <td className="py-2 px-4 border-b border-gray-200 text-red-600 cursor-pointer">Delete</td>
                                 <td className="py-2 px-4 border-b border-gray-200 text-blue-600 cursor-pointer">Create Card</td>

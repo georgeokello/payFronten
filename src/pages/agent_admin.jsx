@@ -154,7 +154,7 @@ const AgentAdmin = () => {
                 <NavBar />
                 <SectionHeader title="View All Agent Admins" />
                 <div className="ml-20">
-                    <h2>Avialable Agent <span className="ml-20 text-blue-700"> <Link to="/create-agent-admin">Create Agent Admin</Link></span></h2>
+                    <h2>Available Agent <span className="ml-20 text-blue-700"> <Link to="/create-agent-admin">Create Agent Admin</Link></span></h2>
                 </div>
                 <div className="p-10 w-full">
                     <table className=" bg-white mt-6 w-full">

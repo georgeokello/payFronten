@@ -38,7 +38,7 @@ const CreateVendor = () =>{
             contact_phone: vendorContactPhone
         }
         try{
-            const resp = await axios.post("https://edutele-pay-backend.onrender.com/api/register-vendor", payload, {
+            const resp = await axios.post("https://edutele-pay-backend.onrender.com/api/vendors", payload, {
                 headers:{
                     "Content-Type": "application/json",
                     "Authorization": authHeader()
