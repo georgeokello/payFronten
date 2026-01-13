@@ -61,23 +61,23 @@ const CreateCustomer = () => {
                     <form className="bg-white p-6 rounded shadow-md w-3/4" onSubmit={CreateCustomer}>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
-                            <input type="text" onChange={(e) => setName(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter vendors name" />
+                            <input type="text" onChange={(e) => setName(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter full name" />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Phone</label>
-                            <input type="text" onChange={(e) => setPhone(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter vendor email" />
+                            <input type="text" onChange={(e) => setPhone(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter phone number" />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Gender</label>
-                            <input type="text" onChange={(e) => setGender(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter vendor type" />
+                            <input type="text" onChange={(e) => setGender(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter gender" />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Date of Birth | 2026-01-05</label>
-                            <input type="text" onChange={(e) => setDOB(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter your location" />
+                            <input type="text" onChange={(e) => setDOB(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter your date of birth" />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Account Type</label>
-                            <input type="text" onChange={(e) => setAccountType(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter contact person" />
+                            <input type="text" onChange={(e) => setAccountType(e.target.value)} className="w-full px-3 py-2 border rounded" placeholder="Enter account type" />
                         </div>
                         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Customer</button>
                     </form>
