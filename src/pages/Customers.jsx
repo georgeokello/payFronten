@@ -171,7 +171,7 @@ const Customer = () => {
                                 <td className="py-2 px-4 border-b border-gray-200">{item.status}</td>
                                 <td onClick={() => handleEditClick(item)} className="py-2 px-4 border-b border-gray-200 text-blue-600 cursor-pointer">Edit</td>
                                 <td onClick={() => setDeleteItem(item)} className="py-2 px-4 border-b border-gray-200 text-red-600 cursor-pointer">Delete</td>
-                                <td className="py-2 px-4 border-b border-gray-200 text-blue-600 cursor-pointer">Create Card</td>
+                                <td className="py-2 px-4 border-b border-gray-200 text-blue-600 cursor-pointer">Link Card</td>
                             </tr>
                             ))}     
                         </tbody>

@@ -54,23 +54,33 @@ const Vendor = () =>{
 
     console.log("items", items)
 
+//     {
+//   "name": "string",
+//   "type": "string",
+//   "email": "user@example.com",
+//   "location": "string",
+//   "contact_person": "string",
+//   "contact_phone": "string",
+//   "status": "pending"
+// }
+
     const handleEditClick = (item) => {
         setEditingItem(item);          // Open modal
         setFormData({                  // Prefill form
             name: item.name,
             type: item.type,
-            status: item.status,
             email: item.email,
             location: item.location,
             contact_person: item.contact_person,
             contact_phone: item.contact_phone,
+            status: item.status,
         });
     };
 
     const handleSave = async () => {
         try {
             await axios.put(
-                `https://edutele-pay-backend.onrender.com/api/customers/${editingItem.public_id}`,
+                `https://edutele-pay-backend.onrender.com/api/vendors/${editingItem.public_id}`,
                 formData,
                 {
                     headers: {
@@ -102,7 +112,7 @@ const Vendor = () =>{
 
         try {
             await axios.delete(
-                `https://edutele-pay-backend.onrender.com/api/customers/${deleteItem.public_id}`,
+                `https://edutele-pay-backend.onrender.com/api/vendors/${deleteItem.public_id}`,
                 {
                     headers: {
                         Authorization: authHeader(),
@@ -123,23 +133,6 @@ const Vendor = () =>{
         }
     };
 
-
-    // if (loading) return <p>Loading...</p>;
-    // if (error) return <p>{error}</p>;
-
-    // {
-    //   "public_id": "string",
-    //   "vendor_code": "string",
-    //   "name": "string",
-    //   "type": "canteen",
-    //   "status": "pending",
-    //   "email": "user@example.com",
-    //   "location": "string",
-    //   "contact_person": "string",
-    //   "contact_phone": "string",
-    //   "created_at": "2025-12-23T12:41:41.538Z",
-    //   "updated_at": "2025-12-23T12:41:41.538Z"
-    // }
     return(
         <div className="w-full">
             <Sidebar />
@@ -176,8 +169,8 @@ const Vendor = () =>{
                                 <td className="py-2 px-4 border-b border-gray-200">{item.location}</td>
                                 <td className="py-2 px-4 border-b border-gray-200">{item.contact_person}</td>
                                 <td className="py-2 px-4 border-b border-gray-200">{item.contact_phone}</td>
-                                <td className="py-2 px-4 border-b border-gray-200 text-blue-600 cursor-pointer">Edit</td>
-                                <td className="py-2 px-4 border-b border-gray-200 text-red-600 cursor-pointer">Delete</td>
+                                <td onClick={() => handleEditClick(item)} className="py-2 px-4 border-b border-gray-200 text-blue-600 cursor-pointer">Edit</td>
+                                <td onClick={() => setDeleteItem(item)} className="py-2 px-4 border-b border-gray-200 text-red-600 cursor-pointer">Delete</td>
                             </tr>
                             ))}         
                         </tbody>
@@ -237,9 +230,9 @@ const Vendor = () =>{
                                 <input
                                     type="text"
                                     className="w-full mb-2 border p-2 rounded"
-                                    placeholder="Account Type"
-                                    value={formData.account_type}
-                                    onChange={(e) => setFormData({ ...formData, account_type: e.target.value })} />
+                                    placeholder="Location"
+                                    value={formData.location}
+                                    onChange={(e) => setFormData({ ...formData, location: e.target.value })} />
                             </div>
 
                             <div className="mb-4">

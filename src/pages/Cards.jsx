@@ -92,7 +92,7 @@ const Cards = () => {
             <Navbar />
             <SectionHeader title="Cards Management" />
             <div className="ml-20">
-                <h2>Available Card</h2>
+                <h2>Available Card <span className="ml-20 text-blue-700"><Link to="/create-card">Add a Card</Link> </span> </h2>
             </div>
             <div className="p-10 w-full">
                 <table className=" bg-white mt-6 w-full">

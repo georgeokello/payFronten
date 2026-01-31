@@ -14,6 +14,9 @@ import CreateCustomer from "../pages/customers_create";
 import AgentAdmin from "../pages/agent_admin";
 import CreateAgentAdmin from "../pages/agent_admin_create";
 import Logout from "../pages/logout";
+import CustomerLogin from "../pages/Customer_login";
+import CustomerSignup from "../pages/Customer_signup";
+import CustomerPage from "../pages/Customer_page";
 
 
 
@@ -25,6 +28,8 @@ const AppRoutes = () => {
         <Routes>
             {/* public routes */}
             <Route path="/login" element={<Login />} />
+            <Route path="/customer-login" element={ <CustomerLogin /> } />
+            <Route path="/customer-signup" element={ <CustomerSignup /> } />
             {/* Protected routes  */}
             <Route element={<ProtectedRoute />}>
                 <Route path="/" element={<HomePage />} />
@@ -36,6 +41,7 @@ const AppRoutes = () => {
                 <Route path="/create-vendor" element={ <CreateVendor /> } />
                 <Route path="/customer" element={<Customer />} />
                 <Route path="/create-customer" element ={ <CreateCustomer /> } />
+                <Route path="/customer-page" element={ <CustomerPage /> } />
                 <Route path="/agent-admin" element={<AgentAdmin />} />
                 <Route path="/create-agent-admin" element={<CreateAgentAdmin /> } />
                 <Route path="/logout" element={<Logout />} />

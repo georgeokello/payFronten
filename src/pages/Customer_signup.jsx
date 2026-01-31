@@ -64,7 +64,7 @@ const Login = () =>{
                     </div>
                     <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Login</button>
                 </form>
-                <Link to="/customer-login" className="mt-4 text-blue-700">Login as a customer</Link>
+                <Link to="/customer-login" className="mt-4 text-blue-700">Customer Login</Link>
             </div>
         </div>
     )
